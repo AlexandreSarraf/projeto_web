@@ -1,0 +1,11 @@
+img{
+
+}
+
+.container img{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: hidden; /* Evita que o conteúdo vaze para fora do container */
+    text-align: center; /* Alinha o texto ao centro */
+}
