@@ -8,7 +8,7 @@ body {
 }
 
 .logo {
-    width: 100px; /* Definindo a largura do logo */
+    width: 390px; /* Definindo a largura do logo */
     display: block; /* Fazendo o logo um elemento de bloco para poder definir margens */
     margin-bottom: 20px; /* Margem inferior para separar o logo do título */
 }
