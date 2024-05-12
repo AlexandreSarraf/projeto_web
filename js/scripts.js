@@ -1,3 +1,4 @@
+var notes = [];
 function addTask() {
     var input = document.getElementById("taskInput");
     var taskText = input.value.trim();
@@ -36,4 +37,18 @@ function displayNotes() {
         ul.appendChild(li);
     });
     noteDisplay.appendChild(ul);
+}
+
+function saveNotes() {
+    if (notes.length === 0) {
+        alert("Não há anotações para salvar!");
+        return;
+    }
+
+    var blob = new Blob([notes.join('\n')], { type: 'text/plain' });
+    console.log(blob)
+    var a = document.createElement("a");
+    a.href = window.URL.createObjectURL(blob);
+    a.download = "anotacoes.txt";
+    a.click();
 }

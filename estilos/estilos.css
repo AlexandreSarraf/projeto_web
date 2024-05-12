@@ -18,7 +18,7 @@ h1 {
 }
 
 input[type="text"] {
-    width: 70%;
+    width: 100%;
     padding: 8px;
     margin-bottom: 10px;
 }
@@ -33,6 +33,7 @@ button {
 
 button:hover {
     background-color: #0056b3;
+    color: rgb(253, 238, 24)
 }
 
 li {
