@@ -22,6 +22,9 @@ function addNote() {
         notes.push(noteText);
         displayNotes(); // Atualiza a exibição das anotações
         noteInput.value = "";
+
+        console.log("Anotações atuais:", notes); // Verifica se a variável "notes" contém anotações
+        saveNotes(); // Chama a função saveNotes()
     } else {
         alert("Por favor, insira uma anotação!");
     }
@@ -47,6 +50,8 @@ function saveNotes() {
 
     var blob = new Blob([notes.join('\n')], { type: 'text/plain' });
     console.log(blob)
+    console.log("Salvando anotações...");
+
     var a = document.createElement("a");
     a.href = window.URL.createObjectURL(blob);
     a.download = "anotacoes.txt";
