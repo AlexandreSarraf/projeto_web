@@ -20,21 +20,26 @@ function addNote() {
     var noteText = noteInput.value.trim();
     if (noteText !== "") {
         notes.push(noteText);
+        console.log("Nova anotação adicionada:", noteText);
+        console.log("Anotações atualizadas:", notes);
         displayNotes(); // Atualiza a exibição das anotações
         noteInput.value = "";
 
-        console.log("Anotações atuais:", notes); // Verifica se a variável "notes" contém anotações
+        console.log("Chamando saveNotes()...");
         saveNotes(); // Chama a função saveNotes()
     } else {
         alert("Por favor, insira uma anotação!");
     }
 }
 
+
 function displayNotes() {
+    console.log("Exibindo anotações...");
     var noteDisplay = document.getElementById("noteDisplay");
     noteDisplay.innerHTML = ""; // Limpa o conteúdo anterior
     var ul = document.createElement("ul");
     notes.forEach(function(note) {
+        console.log("Exibindo anotação:", note);
         var li = document.createElement("li");
         li.textContent = note;
         ul.appendChild(li);
@@ -42,15 +47,16 @@ function displayNotes() {
     noteDisplay.appendChild(ul);
 }
 
+
 function saveNotes() {
+    console.log("Salvando anotações...");
     if (notes.length === 0) {
         alert("Não há anotações para salvar!");
         return;
     }
 
     var blob = new Blob([notes.join('\n')], { type: 'text/plain' });
-    console.log(blob)
-    console.log("Salvando anotações...");
+    console.log("Blob criado:", blob);
 
     var a = document.createElement("a");
     a.href = window.URL.createObjectURL(blob);
