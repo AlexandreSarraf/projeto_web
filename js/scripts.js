@@ -58,11 +58,10 @@ function saveNotes() {
     var blob = new Blob([notes.join('\n')], { type: 'text/plain' });
     console.log("Blob criado:", blob);
 
-    var a = document.createElement("a");
-    a.href = window.URL.createObjectURL(blob);
-    a.download = "anotacoes.txt";
-
     setTimeout(function() {
+        var a = document.createElement("a");
+        a.href = window.URL.createObjectURL(blob);
+        a.download = "anotacoes.txt";
         a.click();
     }, 100); // Adiciona um atraso de 100ms antes de iniciar o download
 }
